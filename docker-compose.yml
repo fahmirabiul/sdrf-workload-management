@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+    db_sdrf:
+        image: mysql:8.0
+        container_name: mysql_sdrf
+        restart: always
+        environment:
+            MYSQL_ROOT_PASSWORD: rootpassword
+            MYSQL_DATABASE: db_sdrf
+            MYSQL_USER: laravel_user
+            MYSQL_PASSWORD: laravel_password
+        ports:
+            - "3307:3306"
+        volumes:
+            # Kita pasang alias lokal 'db_data_sdrf' ke dalam container
+            - db_data_sdrf:/var/lib/mysql
+
+volumes:
+    db_data_sdrf:
+        name: sdrf_db_data_sdrf # <-- KUNCI UTAMA: Paksa Docker mencari nama fisik ini di Docker Desktop!
+        external: true
