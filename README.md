@@ -84,6 +84,9 @@ php artisan migrate --seed
 php artisan serve
 ```
 
+7. 📄 Lisensi
+   Proyek ini dilisensikan di bawah MIT License.
+
 ### Screen Demo
 
 <img src="public/screenshoot/dashboard.png" width="100%">
