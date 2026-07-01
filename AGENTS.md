@@ -83,8 +83,8 @@ When approving a request would push a programmer over 20 pts/month:
 ### Enums
 
 Status enums are PHP 8.1 backed enums with `label()` and `colorClass()` methods:
-- `App\Enums\RequestStatus` — request ticket states
-- `App\Enums\ProjectStatus` — development project states
+- `App\Enums\RequestStatus` — request ticket states (only `label()`, no `colorClass()`)
+- `App\Enums\ProjectStatus` — development project states (has both `label()` and `colorClass()`)
 
 Both are cast in their respective models. Use `::from()` to convert request input.
 
@@ -111,7 +111,7 @@ resources/views/
 └── welcome.blade.php
 ```
 
-Design tokens and component styling follow `DESIGN.md` (Meta-inspired design system). Use inline `style` attributes for font-family fallbacks since Optimistic VF is not available via CDN.
+Design tokens and component styling follow `DESIGN.md` (Apple-inspired design system with Action Blue `#0066cc` as single accent). Use inline `style` attributes for font-family fallbacks since SF Pro is not available via CDN.
 
 ## Coding conventions
 
