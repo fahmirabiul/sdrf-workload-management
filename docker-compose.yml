@@ -18,5 +18,4 @@ services:
 
 volumes:
     db_data_sdrf:
-        name: sdrf_db_data_sdrf # <-- KUNCI UTAMA: Paksa Docker mencari nama fisik ini di Docker Desktop!
-        external: true
+        driver: local

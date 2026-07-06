@@ -482,9 +482,9 @@
                             <p class="text-slate-500 text-xs mt-1">Setiap mutasi status terekam ke log.</p>
                         </div>
                         <div class="bg-white p-6 rounded-xl border border-slate-200 text-center shadow-sm hover:scale-[1.02] transition-transform">
-                            <p class="text-4xl font-extrabold text-indigo-600 font-sans">4 Peran</p>
+                            <p class="text-4xl font-extrabold text-indigo-600 font-sans">3 Peran</p>
                             <p class="text-xs font-semibold text-slate-400 uppercase tracking-wide mt-2">Hak Akses Sistem</p>
-                            <p class="text-slate-500 text-xs mt-1">User, Kepala TIK, Programmer, Infra.</p>
+                            <p class="text-slate-500 text-xs mt-1">User, Kepala TIK, Programmer</p>
                         </div>
                         <div class="bg-white p-6 rounded-xl border border-slate-200 text-center shadow-sm hover:scale-[1.02] transition-transform">
                             <p class="text-4xl font-extrabold text-indigo-600 font-sans">24/7</p>

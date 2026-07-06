@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-[#1e293b] leading-tight">
-            {{ __('SDRF Multi-Role Dashboard') }}
+            {{ __('IT Workload Management') }}
         </h2>
     </x-slot>
 
