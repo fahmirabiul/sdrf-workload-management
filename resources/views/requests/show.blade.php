@@ -1,19 +1,18 @@
 <x-app-layout>
     <x-slot name="header">
         <div class="flex justify-between items-center">
-            <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+            <h2 class="font-semibold text-xl text-slate-800 leading-tight">
                 Detail Pengajuan: {{ $requestData->ticket_number }}
             </h2>
             <a href="{{ route('requests.index') }}"
-                class="text-sm text-gray-600 dark:text-gray-400 hover:underline">&larr; Kembali</a>
+                class="text-sm text-slate-500 hover:underline">&larr; Kembali</a>
         </div>
     </x-slot>
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
+    <div class="space-y-6">
 
             @if (session('success'))
-                <div class="p-4 bg-green-100 border border-green-400 text-green-700 rounded-md">
+                <div class="p-4 bg-green-50 border-0 text-success rounded-xl text-sm font-semibold">
                     {{ session('success') }}
                 </div>
             @endif
@@ -22,29 +21,29 @@
 
                 <div class="lg:col-span-2 space-y-6">
                     <div
-                        class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg p-6 text-gray-900 dark:text-gray-100">
-                        <h3 class="text-lg font-bold border-b pb-3 border-gray-200 dark:border-gray-700">Informasi
+                        class="bg-white overflow-hidden shadow-soft rounded-2xl p-6 text-slate-700 border-0">
+                        <h3 class="text-lg font-bold border-b pb-3 border-gray-100 text-slate-800">Informasi
                             Pengajuan</h3>
 
                         <div class="mt-4 grid grid-cols-2 gap-4 text-sm">
                             <div>
-                                <span class="text-gray-500 block">Pengaju / Unit Kerja</span>
-                                <strong>{{ $requestData->user->username }} / {{ $requestData->unit->name }}</strong>
+                                <span class="text-slate-400 block text-xs font-bold uppercase tracking-wider">Pengaju / Unit Kerja</span>
+                                <strong class="text-slate-700">{{ $requestData->user->username }} / {{ $requestData->unit->name }}</strong>
                             </div>
                             <div>
-                                <span class="text-gray-500 block">Aplikasi Target / Tipe</span>
-                                <strong class="capitalize">{{ $requestData->application->name }}
+                                <span class="text-slate-400 block text-xs font-bold uppercase tracking-wider">Aplikasi Target / Tipe</span>
+                                <strong class="capitalize text-slate-700">{{ $requestData->application->name }}
                                     ({{ str_replace('_', ' ', $requestData->request_type) }})</strong>
                             </div>
                             <div>
-                                <span class="text-gray-500 block">Tanggal Target Digunakan</span>
+                                <span class="text-slate-400 block text-xs font-bold uppercase tracking-wider">Tanggal Target Digunakan</span>
                                 <strong
-                                    class="text-blue-600 dark:text-blue-400">{{ \Carbon\Carbon::parse($requestData->target_used_date)->format('d M Y') }}</strong>
+                                    class="text-primary">{{ \Carbon\Carbon::parse($requestData->target_used_date)->format('d M Y') }}</strong>
                             </div>
                             <div>
-                                <span class="text-gray-500 block">Status Saat Ini</span>
+                                <span class="text-slate-400 block text-xs font-bold uppercase tracking-wider">Status Saat Ini</span>
                                 <span
-                                    class="inline-block text-xs font-bold px-2.5 py-0.5 rounded-full mt-1 bg-yellow-100 text-yellow-800">
+                                    class="inline-block text-xs font-bold px-2.5 py-0.5 rounded-1.8 mt-1 bg-yellow-100 text-yellow-800">
                                     {{ strtoupper($requestData->status) }}
                                 </span>
                             </div>
@@ -52,26 +51,26 @@
 
                         <div class="mt-6 space-y-4">
                             <div>
-                                <h4 class="text-sm font-semibold text-gray-500">Judul Permintaan</h4>
-                                <p class="text-md mt-1 font-medium">{{ $requestData->title }}</p>
+                                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider">Judul Permintaan</h4>
+                                <p class="text-md mt-1 font-semibold text-slate-800">{{ $requestData->title }}</p>
                             </div>
                             <div>
-                                <h4 class="text-sm font-semibold text-gray-500">Deskripsi Masalah / Kebutuhan</h4>
+                                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider">Deskripsi Masalah / Kebutuhan</h4>
                                 <p
-                                    class="text-sm mt-1 text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-gray-900 p-3 rounded-md whitespace-pre-line">
+                                    class="text-sm mt-1 text-slate-600 bg-slate-50 p-3 rounded-xl whitespace-pre-line border border-gray-100">
                                     {{ $requestData->description }}</p>
                             </div>
                             <div>
-                                <h4 class="text-sm font-semibold text-gray-500">Dampak Bisnis & Justifikasi</h4>
+                                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider">Dampak Bisnis & Justifikasi</h4>
                                 <p
-                                    class="text-sm mt-1 text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-gray-900 p-3 rounded-md whitespace-pre-line">
+                                    class="text-sm mt-1 text-slate-600 bg-slate-50 p-3 rounded-xl whitespace-pre-line border border-gray-100">
                                     {{ $requestData->business_impact }}</p>
                             </div>
                             @if ($requestData->attachment_path)
                                 <div>
-                                    <h4 class="text-sm font-semibold text-gray-500">Dokumen Pendukung</h4>
+                                    <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider font-semibold">Dokumen Pendukung</h4>
                                     <a href="{{ route('requests.view-file', $requestData->id) }}" target="_blank"
-                                        class="mt-2 inline-flex items-center text-sm text-blue-500 hover:underline">
+                                        class="mt-2 inline-flex items-center text-sm font-semibold text-primary hover:text-primary-light transition-colors">
                                         📁 Lihat Lampiran Berkas
                                     </a>
                                 </div>
@@ -85,9 +84,8 @@
                     @if ($requestData->status === 'submitted')
                         @if (auth()->user()->role === 'kepala_tik')
                             <div
-                                class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg p-6 text-gray-900 dark:text-gray-100 border border-blue-200 dark:border-blue-900">
-                                <h3 class="text-md font-bold text-blue-600 dark:text-blue-400 mb-4">🛡️ Panel Validasi &
-                                    Penjadwalan</h3>
+                                class="bg-white overflow-hidden shadow-soft rounded-2xl p-6 text-slate-700 border-0 border-l-4 border-blue-500">
+                                <h3 class="text-md font-bold text-blue-600 mb-4">Panel Validasi & Penjadwalan</h3>
 
                                 <form method="POST" action="{{ route('requests.review', $requestData->id) }}"
                                     class="space-y-4">
@@ -95,9 +93,9 @@
                                     @method('PATCH')
 
                                     <div>
-                                        <x-input-label for="action" :value="__('Keputusan Triage Awal')" />
+                                        <x-input-label for="action" :value="__('Keputusan Triage Awal')" class="font-bold text-xs text-slate-700" />
                                         <select id="action" name="action"
-                                            class="mt-1 block w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 rounded-md shadow-sm"
+                                            class="mt-1 block w-full border-gray-300 focus:border-primary focus:ring-primary rounded-lg shadow-sm text-sm"
                                             required>
                                             <option value="">-- Pilih Keputusan --</option>
                                             <option value="schedule_meeting">Setujui & Jadwalkan Pertemuan</option>
@@ -106,20 +104,20 @@
                                     </div>
 
                                     <div>
-                                        <x-input-label for="meeting_notes" :value="__('Catatan / Alasan Penolakan')" />
+                                        <x-input-label for="meeting_notes" :value="__('Catatan / Alasan Penolakan')" class="font-bold text-xs text-slate-700" />
                                         <textarea id="meeting_notes" name="meeting_notes" rows="3"
-                                            class="mt-1 block w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 rounded-md shadow-sm"
+                                            class="mt-1 block w-full border-gray-300 focus:border-primary focus:ring-primary rounded-lg shadow-sm text-sm"
                                             placeholder="Masukkan detail alasan jika ditolak, atau catatan awal jika dijadwalkan rapat..." required></textarea>
                                     </div>
 
-                                    <x-primary-button class="w-full justify-center">
+                                    <x-primary-button class="w-full justify-center bg-primary hover:bg-primary/95 shadow-soft-sm rounded-lg">
                                         {{ __('Proses Keputusan') }}
                                     </x-primary-button>
                                 </form>
                             </div>
                         @else
                             <div
-                                class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg p-6 text-gray-500 text-center text-sm">
+                                class="bg-white overflow-hidden shadow-soft rounded-2xl p-6 text-slate-400 text-center text-sm border-0">
                                 ⏳ Menunggu validasi awal dan triage dari Kepala TIK.
                             </div>
                         @endif
@@ -129,9 +127,8 @@
                     @if ($requestData->status === 'analysis_scheduled')
                         @if (auth()->user()->role === 'kepala_tik')
                             <div
-                                class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg p-6 text-gray-900 dark:text-gray-100 border border-green-200 dark:border-green-900">
-                                <h3 class="text-md font-bold text-green-600 dark:text-green-400 mb-4">🚀 Panel Komitmen
-                                    Proyek & Jadwal</h3>
+                                class="bg-white overflow-hidden shadow-soft rounded-2xl p-6 text-slate-700 border-0 border-l-4 border-green-500">
+                                <h3 class="text-md font-bold text-green-600 mb-4 font-semibold">Panel Komitmen Proyek & Jadwal</h3>
 
                                 <form method="POST" action="{{ route('requests.review', $requestData->id) }}"
                                     class="space-y-4">
@@ -141,16 +138,16 @@
                                     <input type="hidden" name="action" value="approve_project">
 
                                     <div>
-                                        <x-input-label for="meeting_notes" :value="__('Hasil Notulensi Rapat & Target Scope')" />
+                                        <x-input-label for="meeting_notes" :value="__('Hasil Notulensi Rapat & Target Scope')" class="font-bold text-xs text-slate-700" />
                                         <textarea id="meeting_notes" name="meeting_notes" rows="3"
-                                            class="mt-1 block w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 rounded-md shadow-sm"
+                                            class="mt-1 block w-full border-gray-300 focus:border-primary focus:ring-primary rounded-lg shadow-sm text-sm"
                                             placeholder="Tulis hasil kesepakatan scope akhir dengan user..." required>{{ old('meeting_notes', $requestData->meeting_notes) }}</textarea>
                                     </div>
 
                                     <div>
-                                        <x-input-label for="t_shirt_size" :value="__('Estimasi Bobot Kerja (T-Shirt Size)')" />
+                                        <x-input-label for="t_shirt_size" :value="__('Estimasi Bobot Kerja (T-Shirt Size)')" class="font-bold text-xs text-slate-700" />
                                         <select id="t_shirt_size" name="t_shirt_size"
-                                            class="mt-1 block w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 rounded-md shadow-sm"
+                                            class="mt-1 block w-full border-gray-300 focus:border-primary focus:ring-primary rounded-lg shadow-sm text-sm"
                                             required>
                                             <option value="">-- Pilih Ukuran --</option>
                                             <option value="S">S (Small - 2 Poin | 1-3 Hari)</option>
@@ -162,45 +159,45 @@
 
                                     <div class="grid grid-cols-2 gap-4">
                                         <div>
-                                            <x-input-label for="start_date" :value="__('Tanggal Mulai')" />
+                                            <x-input-label for="start_date" :value="__('Tanggal Mulai')" class="font-bold text-xs text-slate-700" />
                                             <x-text-input id="start_date" name="start_date" type="date"
-                                                class="mt-1 block w-full {{ $errors->has('start_date') ? 'border-red-500 ring-1 ring-red-500' : '' }}"
+                                                class="mt-1 block w-full border-gray-300 focus:border-primary focus:ring-primary rounded-lg shadow-sm text-sm {{ $errors->has('start_date') ? 'border-red-500 ring-1 ring-red-500' : '' }}"
                                                 value="{{ old('start_date') }}" required />
                                             @error('start_date')
-                                                <p class="mt-1 text-xs text-red-600 dark:text-red-400 font-semibold">
+                                                <p class="mt-1 text-xs text-red-600 font-semibold">
                                                     {{ $message }}</p>
                                             @enderror
                                         </div>
                                         <div>
-                                            <x-input-label for="end_date" :value="__('Tanggal Selesai')" />
+                                            <x-input-label for="end_date" :value="__('Tanggal Selesai')" class="font-bold text-xs text-slate-700" />
                                             <x-text-input id="end_date" name="end_date" type="date"
-                                                class="mt-1 block w-full {{ $errors->has('end_date') ? 'border-red-500 ring-1 ring-red-500' : '' }}"
+                                                class="mt-1 block w-full border-gray-300 focus:border-primary focus:ring-primary rounded-lg shadow-sm text-sm {{ $errors->has('end_date') ? 'border-red-500 ring-1 ring-red-500' : '' }}"
                                                 value="{{ old('end_date') }}" required />
 
                                             @error('end_date')
                                                 <p
-                                                    class="mt-1 text-xs text-red-600 dark:text-red-400 font-bold bg-red-50 dark:bg-red-900/30 p-1.5 rounded border border-red-200">
+                                                    class="mt-1 text-xs text-red-600 font-bold bg-red-50 p-1.5 rounded-lg border border-red-200">
                                                     ⚠️ {{ $message }}
                                                 </p>
                                             @enderror
                                         </div>
                                     </div>
                                     <div id="api_error_message"
-                                        class="mt-2 p-2.5 bg-red-50 dark:bg-red-950/20 border border-red-200 dark:border-red-900 text-red-600 dark:text-red-400 rounded text-xs font-semibold hidden animate-pulse">
+                                        class="mt-2 p-2.5 bg-red-50 border border-red-200 text-red-600 rounded-lg text-xs font-semibold hidden animate-pulse">
                                     </div>
 
                                     <div>
-                                        <x-input-label for="programmer_id" :value="__('Tugaskan Programmer (Beban Kerja Terjadwal)')" />
+                                        <x-input-label for="programmer_id" :value="__('Tugaskan Programmer (Beban Kerja Terjadwal)')" class="font-bold text-xs text-slate-700" />
 
                                         @error('programmer_id')
                                             <div
-                                                class="mt-1 p-3 bg-red-100 border border-red-400 text-red-700 rounded-md text-sm font-semibold animate-pulse">
+                                                class="mt-1 p-3 bg-red-50 text-red-700 rounded-lg text-sm font-semibold animate-pulse">
                                                 {{ $message }}
                                             </div>
                                         @enderror
 
                                         <select id="programmer_id" name="programmer_id"
-                                            class="mt-1 block w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 rounded-md shadow-sm font-sans text-sm"
+                                            class="mt-1 block w-full border-gray-300 focus:border-primary focus:ring-primary rounded-lg shadow-sm text-sm font-sans"
                                             required disabled>
                                             <option value="">-- Isi tanggal pengerjaan terlebih dahulu --</option>
                                         </select>
@@ -209,37 +206,32 @@
                                     </div>
 
                                     <div id="urgent_container"
-                                        class="bg-red-50 dark:bg-gray-900 p-3 rounded-md border border-red-200 dark:border-red-900 mt-2 hidden">
+                                        class="bg-red-50 p-3 rounded-lg border border-red-100 mt-2 hidden">
                                         <div class="flex items-start">
                                             <div class="flex items-center h-5">
                                                 <input id="is_urgent" name="is_urgent" type="checkbox"
                                                     value="1"
-                                                    class="focus:ring-red-500 h-4 w-4 text-red-600 border-gray-300 rounded">
+                                                    class="focus:ring-primary h-4 w-4 text-primary border-gray-300 rounded">
                                             </div>
                                             <div class="ml-3 text-sm">
                                                 <label for="is_urgent"
-                                                    class="font-bold text-red-800 dark:text-red-400">🚨 Aktifkan
-                                                    Manajemen Konflik (Suspend Proyek Terpilih)</label>
-                                                <p class="text-xs text-red-600 dark:text-red-500">Mencuci kapasitas
-                                                    bulan terpilih dengan menghentikan proyek aktif demi proyek darurat
-                                                    ini.</p>
+                                                    class="font-bold text-red-800">🚨 Aktifkan Manajemen Konflik</label>
+                                                <p class="text-xs text-red-600">Menunda proyek terpilih demi proyek darurat ini.</p>
                                             </div>
                                         </div>
                                     </div>
 
                                     <x-primary-button
-                                        class="w-full justify-center bg-green-600 hover:bg-green-700 active:bg-green-800">
+                                        class="w-full justify-center bg-green-600 hover:bg-green-700 shadow-soft-sm rounded-lg">
                                         {{ __('Sahkan & Buat Proyek') }}
                                     </x-primary-button>
                                 </form>
                             </div>
                         @else
                             <div
-                                class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg p-6 text-gray-900 dark:text-gray-100">
-                                <h3 class="text-sm font-bold text-blue-500 mb-2">📅 Rapat Koordinasi Dijadwalkan</h3>
-                                <p class="text-sm text-gray-600 dark:text-gray-400">Permintaan Anda sedang ditinjau
-                                    intensif. Mohon siapkan waktu untuk menghadiri koordinasi teknis bersama tim TIK.
-                                </p>
+                                class="bg-white overflow-hidden shadow-soft rounded-2xl p-6 text-slate-700 border-0">
+                                <h3 class="text-sm font-bold text-primary mb-2">📅 Rapat Koordinasi Dijadwalkan</h3>
+                                <p class="text-sm text-slate-500">Permintaan Anda sedang ditinjau intensif. Mohon siapkan waktu untuk menghadiri koordinasi teknis bersama tim TIK.</p>
                             </div>
                         @endif
                     @endif
@@ -247,11 +239,10 @@
 
                     @if ($requestData->status !== 'submitted' && $requestData->meeting_notes)
                         <div
-                            class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg p-6 text-gray-900 dark:text-gray-100 shadow">
-                            <h3 class="text-sm font-bold text-gray-500 mb-2">📋 Catatan Keputusan / Notulensi Rapat TIK
-                            </h3>
+                            class="bg-white overflow-hidden shadow-soft rounded-2xl p-6 text-slate-700 border-0">
+                            <h3 class="text-xs font-bold text-slate-400 mb-2 uppercase tracking-wider">📋 Catatan Keputusan / Notulensi Rapat TIK</h3>
                             <p
-                                class="text-sm bg-gray-50 dark:bg-gray-900 p-3 rounded-md whitespace-pre-line font-mono text-xs">
+                                class="text-sm bg-slate-50 p-3 rounded-xl font-mono text-xs border border-gray-100">
                                 {{ $requestData->meeting_notes }}</p>
                         </div>
                     @endif
@@ -259,7 +250,6 @@
                 </div>
             </div>
 
-        </div>
     </div>
 </x-app-layout>
 
