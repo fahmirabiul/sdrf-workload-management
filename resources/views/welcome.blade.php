@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'SDRF') }} - Software Request & Workload Management</title>
+        <title>{{ config('app.name', 'IT Workload Management') }} - Software Request & Workload Management</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -62,9 +62,9 @@
                     <!-- Logo -->
                     <a href="/" class="flex items-center gap-3 group">
                         <div class="p-2 bg-indigo-50 rounded-lg group-hover:bg-indigo-100 transition-colors">
-                            <x-application-logo class="h-6 w-auto text-indigo-600" />
+                            <img src="{{ asset('fr_logo.png') }}" alt="Logo" class="h-6 w-auto" />
                         </div>
-                        <span class="text-xl font-bold text-slate-900 tracking-tight">SDRF</span>
+                        <span class="text-xl font-bold text-slate-900 tracking-tight">IT Workload Management</span>
                     </a>
 
                     <!-- Desktop Nav -->
@@ -211,7 +211,7 @@
                                         <span class="w-3 h-3 rounded-full bg-rose-400 inline-block"></span>
                                         <span class="w-3 h-3 rounded-full bg-amber-400 inline-block"></span>
                                         <span class="w-3 h-3 rounded-full bg-emerald-400 inline-block"></span>
-                                        <span class="text-xs font-semibold text-slate-400 ml-2 tracking-wide uppercase font-sans">sdrf-app v1.0</span>
+                                        <span class="text-xs font-semibold text-slate-400 ml-2 tracking-wide uppercase font-sans">it-workload-management v1.0</span>
                                     </div>
                                     <span class="inline-flex items-center gap-1.5 px-2 py-0.5 bg-emerald-50 border border-emerald-100 rounded-full text-[10px] font-bold text-emerald-700">
                                         <span class="w-1.5 h-1.5 bg-emerald-500 rounded-full pulse-dot"></span>
@@ -483,7 +483,7 @@
                         <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-indigo-300/20 rounded-full blur-xl"></div>
 
                         <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">
-                            Masuk ke Portal SDRF & Mulai Bekerja
+                            Masuk ke Portal IT Workload Management & Mulai Bekerja
                         </h2>
                         <p class="mt-4 text-slate-500 text-base max-w-lg mx-auto leading-relaxed">
                             Gunakan kredensial akun IT Anda untuk mengelola penugasan, menyetujui tiket, atau mengirim ulasan UAT.
@@ -520,13 +520,13 @@
                 <div class="flex flex-col md:flex-row items-center justify-between gap-6">
                     <a href="/" class="flex items-center gap-3">
                         <div class="p-2 bg-slate-800 rounded-lg">
-                            <x-application-logo class="h-5 w-auto text-indigo-400" />
+                            <img src="{{ asset('fr_logo.png') }}" alt="Logo" class="h-5 w-auto" />
                         </div>
-                        <span class="text-base font-bold text-white tracking-tight">SDRF</span>
+                        <span class="text-base font-bold text-white tracking-tight">IT Workload Management</span>
                     </a>
                     
                     <p class="text-xs text-slate-500 font-medium">
-                        &copy; {{ date('Y') }} SDRF &mdash; UPT Teknologi Informasi & Komunikasi. Hak cipta dilindungi.
+                        &copy; {{ date('Y') }} IT Workload Management &mdash; UPT Teknologi Informasi & Komunikasi. Hak cipta dilindungi.
                     </p>
                 </div>
             </div>

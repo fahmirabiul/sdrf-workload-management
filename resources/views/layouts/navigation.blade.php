@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="bg-white/80 backdrop-blur-2xl shadow-soft sticky top-4 mx-4 z-50 rounded-2xl border-0">
+<nav x-data="{ open: false }" class="bg-white/80 backdrop-blur-2xl shadow-soft sticky top-4 mx-4 sm:mx-6 lg:mx-8 xl:mx-auto max-w-7xl z-50 rounded-2xl border-0">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">

@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'SDRF') }}</title>
+        <title>{{ config('app.name', 'IT Workload Management') }}</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,8 +33,8 @@
         <div class="min-h-screen flex flex-col items-center justify-center px-4 py-8">
             <!-- Logo -->
             <a href="/" class="flex items-center gap-2.5 mb-8">
-                <x-application-logo class="h-8 w-auto text-primary" />
-                <span class="text-lg font-semibold text-[#1e293b] tracking-tight">SDRF</span>
+                <img src="{{ asset('fr_logo.png') }}" alt="Logo" class="h-8 w-auto" />
+                <span class="text-lg font-semibold text-[#1e293b] tracking-tight">IT Workload Management</span>
             </a>
 
             <!-- Card -->
@@ -44,7 +44,7 @@
 
             <!-- Footer -->
             <p class="mt-8 text-sm text-[#64748b]">
-                &copy; {{ date('Y') }} SDRF &mdash; University IT Department
+                &copy; {{ date('Y') }} IT Workload Management &mdash; University IT Department
             </p>
         </div>
     </body>
