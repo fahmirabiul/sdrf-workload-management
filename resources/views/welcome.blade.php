@@ -39,18 +39,36 @@
             .glow-effect {
                 position: relative;
             }
+            .glow-effect::before {
+                content: '';
+                position: absolute;
+                inset: -2px;
+                border-radius: inherit;
+                background: linear-gradient(135deg, #6366f1, #a855f7, #3b82f6);
+                z-index: -2;
+                opacity: 0.12;
+                filter: blur(16px);
+                transition: opacity 0.3s ease;
+            }
             .glow-effect::after {
                 content: '';
                 position: absolute;
                 inset: 0;
                 border-radius: inherit;
-                box-shadow: 0 0 25px rgba(99, 102, 241, 0.15);
+                box-shadow: 0 0 35px rgba(99, 102, 241, 0.25);
                 opacity: 0;
                 transition: opacity 0.3s ease;
                 z-index: -1;
             }
+            .glow-effect:hover::before {
+                opacity: 0.25;
+            }
             .glow-effect:hover::after {
                 opacity: 1;
+            }
+            .radial-mask {
+                mask-image: radial-gradient(circle at center, black 60%, transparent 100%);
+                -webkit-mask-image: radial-gradient(circle at center, black 60%, transparent 100%);
             }
         </style>
     </head>
@@ -150,7 +168,7 @@
         <!-- ===== MAIN CONTENT ===== -->
         <main>
             <!-- ===== HERO SECTION ===== -->
-            <section class="relative overflow-hidden grid-bg pt-16 pb-20 lg:pt-24 lg:pb-28 border-b border-slate-100">
+            <section class="relative overflow-hidden grid-bg radial-mask pt-16 pb-20 lg:pt-24 lg:pb-28 border-b border-slate-100">
                 <!-- Soft Glows -->
                 <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-indigo-100/30 rounded-full blur-3xl pointer-events-none"></div>
                 <div class="absolute bottom-10 right-10 w-[300px] h-[300px] bg-amber-100/20 rounded-full blur-2xl pointer-events-none"></div>
@@ -204,7 +222,8 @@
 
                         <!-- Right: Dashboard Preview Card -->
                         <div class="lg:col-span-7 mt-12 lg:mt-0">
-                            <div class="bg-white rounded-2xl border border-slate-200 shadow-xl shadow-slate-100/80 overflow-hidden glow-effect">
+                            <div class="animate-fade-in delay-300">
+                                <div class="bg-white rounded-2xl border border-slate-200 shadow-xl shadow-slate-100/80 overflow-hidden glow-effect animate-float">
                                 <!-- Top Bar (Mock OS / App Window) -->
                                 <div class="bg-slate-50 px-6 py-4 border-b border-slate-100 flex items-center justify-between">
                                     <div class="flex items-center gap-1.5">
@@ -287,6 +306,7 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
 
                     </div>
                 </div>

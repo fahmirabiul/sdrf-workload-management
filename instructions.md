@@ -11,11 +11,11 @@ Task:
 3. Hasilkan Low-Level Instructions (LLIs) berupa langkah mekanis step-by-step yang literal.
 
 Output Specification:
-Langsung berikan daftar [ANCHORS] dan [LLIs]. Dilarang memberikan penjelasan teori, dilarang menulis implementasi kode lengkap. Hemat token.
+Langsung berikan daftar [ANCHORS] dan [LLIs] pada file LLI.md. Dilarang memberikan penjelasan teori, dilarang menulis implementasi kode lengkap. Hemat token.
 
 # JUNIOR DEVELOPER
 Role: Junior Code Implementer.
-Task: Eksekusi LLI di bawah ini dengan patuh pada file jangkar.
+Task: Eksekusi LLI di file [LLI.md](file;file:///d%3A/code_personal/sdrf/LLI.md) dengan patuh pada file jangkar 
 
 [ANCHORS]
 - @[NAMA_FILE_1]
