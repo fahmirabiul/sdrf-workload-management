@@ -10,14 +10,17 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
 
         <style>
             body {
-                font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+                font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            }
+            h1, h2, h3, h4, h5, h6, .font-display {
+                font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             }
 
             .grid-bg {
@@ -79,19 +82,19 @@
                 <div class="flex items-center justify-between h-16">
                     <!-- Logo -->
                     <a href="/" class="flex items-center gap-3 group">
-                        <div class="p-2 bg-indigo-50 rounded-lg group-hover:bg-indigo-100 transition-colors">
-                            <img src="{{ asset('fr_logo.png') }}" alt="Logo" class="h-6 w-auto" />
+                        <div class="w-8 h-8 rounded-xl bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center text-white font-bold text-sm shadow-[0_2px_10px_rgba(0,0,0,0.1)] border border-slate-700/50 group-hover:scale-105 transition-transform">
+                            FR
                         </div>
-                        <span class="text-xl font-bold text-slate-900 tracking-tight">IT Workload Management</span>
+                        <span class="text-lg font-bold text-slate-900 tracking-tight font-display">FLOWCAST</span>
                     </a>
 
                     <!-- Desktop Nav -->
                     <nav class="hidden md:flex items-center gap-8">
                         <a href="#features" class="text-sm font-semibold text-slate-500 hover:text-slate-900 transition-colors">
-                            Fitur Utama
+                            Fitur
                         </a>
                         <a href="#workload-preview" class="text-sm font-semibold text-slate-500 hover:text-slate-900 transition-colors">
-                            Preview Sistem
+                            Solusi
                         </a>
                         <a href="#metrics" class="text-sm font-semibold text-slate-500 hover:text-slate-900 transition-colors">
                             Kapasitas & Aturan
@@ -99,15 +102,10 @@
 
                         @if (Route::has('login'))
                             @auth
-                                <a href="{{ url('/dashboard') }}"
-                                   class="inline-flex items-center px-4 py-2 bg-indigo-600 text-white text-sm font-semibold rounded-xl hover:bg-indigo-500 active:bg-indigo-700 shadow-sm shadow-indigo-200 transition-all duration-150">
-                                    Dashboard
-                                </a>
+                                <a href="{{ url('/dashboard') }}" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors mr-4">Dashboard</a>
                             @else
-                                <a href="{{ route('login') }}"
-                                   class="inline-flex items-center px-4 py-2 bg-indigo-50 text-indigo-600 text-sm font-semibold rounded-xl hover:bg-indigo-100 active:bg-indigo-200 transition-all duration-150">
-                                    Masuk Ke Sistem
-                                </a>
+                                <a href="{{ route('login') }}" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors mr-4">Masuk</a>
+                                <a href="{{ route('login') }}" class="inline-flex items-center px-5 py-2.5 bg-slate-900 text-white text-sm font-medium rounded-full hover:bg-slate-800 hover:shadow-lg hover:shadow-slate-900/20 transition-all duration-200">Mulai Sekarang</a>
                             @endauth
                         @endif
                     </nav>
@@ -185,19 +183,19 @@
                                 </span>
                             </div>
 
-                            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.1] text-balance">
-                                <span class="bg-gradient-to-r from-indigo-600 via-indigo-500 to-indigo-700 bg-clip-text text-transparent">Transparansi Beban Kerja</span>
+                            <h1 class="font-display text-5xl sm:text-6xl lg:text-7xl font-bold text-slate-900 tracking-tighter leading-[1.05] text-balance">
+                                Optimalkan <span class="text-transparent bg-clip-text bg-gradient-to-r from-slate-900 via-slate-600 to-slate-900">Transparansi</span><br/> & Kapasitas Tim IT
                             </h1>
 
-                            <p class="text-lg text-slate-500 leading-relaxed max-w-xl">
-                                Kelola siklus hidup permintaan software (SDRF) universitas, monitor estimasi beban kerja programmer secara proporsional, dan kelola konflik antrian secara real-time.
+                            <p class="text-lg sm:text-xl text-slate-500 leading-relaxed max-w-2xl font-light tracking-wide mt-6">
+                                Kelola siklus hidup permintaan software melalui FLOWCAST. Monitor estimasi beban kerja programmer secara proporsional dan resolusi konflik secara real-time.
                             </p>
 
                             <div class="flex flex-wrap gap-4 pt-2">
                                 @if (Route::has('login'))
                                     @auth
                                         <a href="{{ url('/dashboard') }}"
-                                           class="inline-flex items-center px-6 py-3.5 bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 text-white font-semibold rounded-xl shadow-md shadow-indigo-100 hover:shadow-lg transition-all duration-150">
+                                           class="inline-flex items-center px-7 py-3.5 bg-slate-900 hover:bg-slate-800 text-white font-medium rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.2)] hover:-translate-y-0.5 transition-all duration-200">
                                             Buka Dashboard
                                             <svg class="ml-2 w-4.5 h-4.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
@@ -205,7 +203,7 @@
                                         </a>
                                     @else
                                         <a href="{{ route('login') }}"
-                                           class="inline-flex items-center px-6 py-3.5 bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 text-white font-semibold rounded-xl shadow-md shadow-indigo-100 hover:shadow-lg transition-all duration-150">
+                                           class="inline-flex items-center px-7 py-3.5 bg-slate-900 hover:bg-slate-800 text-white font-medium rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.2)] hover:-translate-y-0.5 transition-all duration-200">
                                             Mulai Pengajuan
                                             <svg class="ml-2 w-4.5 h-4.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
@@ -214,7 +212,7 @@
                                     @endauth
                                 @endif
                                 <a href="#features"
-                                   class="inline-flex items-center px-6 py-3.5 bg-white border border-slate-200 text-slate-600 hover:text-slate-900 hover:bg-slate-50 hover:border-slate-300 font-semibold rounded-xl transition-all duration-150">
+                                   class="inline-flex items-center px-7 py-3.5 bg-white border border-slate-200/80 text-slate-700 hover:text-slate-900 hover:bg-slate-50 hover:border-slate-300 font-medium rounded-full transition-all duration-200 shadow-sm">
                                     Pelajari Fitur
                                 </a>
                             </div>
@@ -384,7 +382,7 @@
                                 Kapasitas Proporsional Bulanan yang Akurat
                             </h2>
                             <p class="mt-4 text-slate-500 leading-relaxed text-base">
-                                Penghitungan kapasitas tidak lagi dipukul rata secara manual. Sistem SDRF menghitung bobot poin proyek secara harian berdasarkan irisan tanggal aktif dalam bulan bersangkutan.
+                                Penghitungan kapasitas tidak lagi dipukul rata secara manual. Sistem FLOWCAST menghitung bobot poin proyek secara harian berdasarkan irisan tanggal aktif dalam bulan bersangkutan.
                             </p>
 
                             <!-- Mini Table -->
@@ -425,9 +423,9 @@
 
                         <!-- Right: Visual Cards of Logs / Audit Trail -->
                         <div class="mt-12 lg:mt-0 space-y-4">
-                            <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200/80">
-                                <h4 class="text-sm font-bold text-slate-700 uppercase tracking-wider mb-4 flex items-center gap-2">
-                                    <svg class="w-4 h-4 text-indigo-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <div class="bg-slate-950 rounded-[2rem] p-8 border border-slate-800 shadow-2xl shadow-slate-900/50">
+                                <h4 class="font-display font-semibold text-white tracking-wide mb-4 flex items-center gap-2">
+                                    <svg class="w-4 h-4 text-indigo-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                                     </svg>
                                     Audit Trail & Log Riwayat Proyek
@@ -435,30 +433,30 @@
 
                                 <div class="space-y-3">
                                     <!-- Log Item 1 -->
-                                    <div class="bg-white p-3 rounded-lg border border-slate-150 text-xs shadow-sm flex flex-col gap-1">
-                                        <div class="flex justify-between font-semibold">
-                                            <span class="text-slate-800">Status Diubah -> DEVELOPMENT</span>
-                                            <span class="text-slate-400">Baru Saja</span>
+                                    <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800/80 text-sm flex flex-col gap-1.5 backdrop-blur-sm hover:bg-slate-800 transition-colors">
+                                        <div class="flex justify-between">
+                                            <span class="text-slate-200 font-medium">Status Diubah -> DEVELOPMENT</span>
+                                            <span class="text-slate-500 text-xs">Baru Saja</span>
                                         </div>
-                                        <p class="text-slate-500">Tiket REQ-2026-002 dialokasikan ke Fajar B. oleh Kepala UPT TIK.</p>
+                                        <p class="text-slate-400 leading-relaxed text-xs">Tiket REQ-2026-002 dialokasikan ke Fajar B. oleh Kepala UPT TIK.</p>
                                     </div>
 
                                     <!-- Log Item 2 -->
-                                    <div class="bg-white p-3 rounded-lg border border-slate-150 text-xs shadow-sm flex flex-col gap-1">
-                                        <div class="flex justify-between font-semibold">
-                                            <span class="text-rose-600 font-bold">⚠️ Konflik Penjadwalan Terdeteksi</span>
-                                            <span class="text-slate-400">10 Menit Lalu</span>
+                                    <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800/80 text-sm flex flex-col gap-1.5 backdrop-blur-sm hover:bg-slate-800 transition-colors">
+                                        <div class="flex justify-between">
+                                            <span class="text-amber-400 font-medium">⚠️ Konflik Penjadwalan Terdeteksi</span>
+                                            <span class="text-slate-500 text-xs">10 Menit Lalu</span>
                                         </div>
-                                        <p class="text-slate-500">Aktivasi proyek mendesak REQ-2026-004 memicu suspensi proyek REQ-2026-001 (Sisa 5 Pts dikloning ke antrian Waiting).</p>
+                                        <p class="text-slate-400 leading-relaxed text-xs">Aktivasi proyek mendesak REQ-2026-004 memicu suspensi proyek REQ-2026-001 (Sisa 5 Pts dikloning ke antrian Waiting).</p>
                                     </div>
 
                                     <!-- Log Item 3 -->
-                                    <div class="bg-white p-3 rounded-lg border border-slate-150 text-xs shadow-sm flex flex-col gap-1">
-                                        <div class="flex justify-between font-semibold">
-                                            <span class="text-emerald-700">UAT Diterima & Ditandatangani</span>
-                                            <span class="text-slate-400">1 Jam Lalu</span>
+                                    <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800/80 text-sm flex flex-col gap-1.5 backdrop-blur-sm hover:bg-slate-800 transition-colors">
+                                        <div class="flex justify-between">
+                                            <span class="text-slate-200 font-medium">UAT Diterima & Ditandatangani</span>
+                                            <span class="text-slate-500 text-xs">1 Jam Lalu</span>
                                         </div>
-                                        <p class="text-slate-500">Pemohon (Unit Keuangan) menyetujui hasil review UAT dengan rating 5 bintang.</p>
+                                        <p class="text-slate-400 leading-relaxed text-xs">Pemohon (Unit Keuangan) menyetujui hasil review UAT dengan rating 5 bintang.</p>
                                     </div>
                                 </div>
                             </div>
@@ -470,26 +468,22 @@
             <!-- ===== METRICS & ATURAN ===== -->
             <section id="metrics" class="py-16 bg-slate-50/50 border-b border-slate-100">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
-                        <div class="bg-white p-6 rounded-xl border border-slate-200 text-center shadow-sm hover:scale-[1.02] transition-transform">
-                            <p class="text-4xl font-extrabold text-indigo-600 font-sans">20 Pts</p>
-                            <p class="text-xs font-semibold text-slate-400 uppercase tracking-wide mt-2">Batas Beban Kerja</p>
-                            <p class="text-slate-500 text-xs mt-1">Maksimum per programmer per bulan.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-4 w-full">
+                        <div class="flex flex-col items-center justify-center p-6 text-center">
+                            <p class="font-display text-5xl lg:text-6xl font-bold text-slate-900 tracking-tighter">20<span class="text-3xl text-slate-400">Pts</span></p>
+                            <p class="text-xs font-semibold text-slate-500 uppercase tracking-widest mt-4">Batas Beban Kerja</p>
                         </div>
-                        <div class="bg-white p-6 rounded-xl border border-slate-200 text-center shadow-sm hover:scale-[1.02] transition-transform">
-                            <p class="text-4xl font-extrabold text-indigo-600 font-sans">100%</p>
-                            <p class="text-xs font-semibold text-slate-400 uppercase tracking-wide mt-2">Audit Terlacak</p>
-                            <p class="text-slate-500 text-xs mt-1">Setiap mutasi status terekam ke log.</p>
+                        <div class="flex flex-col items-center justify-center p-6 text-center">
+                            <p class="font-display text-5xl lg:text-6xl font-bold text-slate-900 tracking-tighter">100<span class="text-3xl text-slate-400">%</span></p>
+                            <p class="text-xs font-semibold text-slate-500 uppercase tracking-widest mt-4">Audit Terlacak</p>
                         </div>
-                        <div class="bg-white p-6 rounded-xl border border-slate-200 text-center shadow-sm hover:scale-[1.02] transition-transform">
-                            <p class="text-4xl font-extrabold text-indigo-600 font-sans">3 Peran</p>
-                            <p class="text-xs font-semibold text-slate-400 uppercase tracking-wide mt-2">Hak Akses Sistem</p>
-                            <p class="text-slate-500 text-xs mt-1">User, Kepala TIK, Programmer</p>
+                        <div class="flex flex-col items-center justify-center p-6 text-center">
+                            <p class="font-display text-5xl lg:text-6xl font-bold text-slate-900 tracking-tighter">3</p>
+                            <p class="text-xs font-semibold text-slate-500 uppercase tracking-widest mt-4">Hak Akses Sistem</p>
                         </div>
-                        <div class="bg-white p-6 rounded-xl border border-slate-200 text-center shadow-sm hover:scale-[1.02] transition-transform">
-                            <p class="text-4xl font-extrabold text-indigo-600 font-sans">24/7</p>
-                            <p class="text-xs font-semibold text-slate-400 uppercase tracking-wide mt-2">Akses Terbuka</p>
-                            <p class="text-slate-500 text-xs mt-1">Pantau & tinjau progress kapan saja.</p>
+                        <div class="flex flex-col items-center justify-center p-6 text-center">
+                            <p class="font-display text-5xl lg:text-6xl font-bold text-slate-900 tracking-tighter">24<span class="text-3xl text-slate-400">/7</span></p>
+                            <p class="text-xs font-semibold text-slate-500 uppercase tracking-widest mt-4">Akses Terbuka</p>
                         </div>
                     </div>
                 </div>
@@ -498,33 +492,25 @@
             <!-- ===== CTA SECTION ===== -->
             <section class="py-20 bg-white">
                 <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <div class="bg-gradient-to-br from-indigo-50/80 to-indigo-100/30 border border-indigo-150 rounded-3xl p-10 sm:p-12 relative overflow-hidden shadow-sm">
-                        <div class="absolute -top-10 -right-10 w-40 h-40 bg-indigo-200/20 rounded-full blur-xl"></div>
-                        <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-indigo-300/20 rounded-full blur-xl"></div>
+                    <div class="bg-slate-950 rounded-[3rem] sm:rounded-[4rem] p-12 sm:p-24 relative overflow-hidden shadow-2xl max-w-5xl mx-auto flex flex-col items-center text-center">
+                        <!-- Ornamen background halus -->
+                        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-800/40 via-transparent to-transparent pointer-events-none"></div>
 
-                        <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">
-                            Masuk ke Portal IT Workload Management & Mulai Bekerja
+                        <h2 class="font-display text-4xl sm:text-5xl font-bold text-white tracking-tighter relative z-10">
+                            Mulai Kelola Workload IT Anda
                         </h2>
-                        <p class="mt-4 text-slate-500 text-base max-w-lg mx-auto leading-relaxed">
+                        <p class="mt-6 text-slate-400 text-lg max-w-xl mx-auto leading-relaxed relative z-10">
                             Gunakan kredensial akun IT Anda untuk mengelola penugasan, menyetujui tiket, atau mengirim ulasan UAT.
                         </p>
-                        <div class="mt-8 flex justify-center gap-4">
+                        <div class="mt-8 flex justify-center gap-4 relative z-10">
                             @if (Route::has('login'))
                                 @auth
-                                    <a href="{{ url('/dashboard') }}"
-                                       class="inline-flex items-center px-8 py-3.5 bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 text-white font-semibold rounded-xl shadow-md shadow-indigo-100 hover:shadow-lg transition-all duration-150">
-                                        Buka Dashboard
-                                        <svg class="ml-2 w-4.5 h-4.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                                        </svg>
+                                    <a href="{{ url('/dashboard') }}" class="inline-flex items-center px-8 py-4 bg-white text-slate-900 hover:bg-slate-100 font-semibold rounded-full shadow-[0_0_40px_rgba(255,255,255,0.1)] hover:scale-105 transition-all duration-300">
+                                        Buka Dashboard <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
                                     </a>
                                 @else
-                                    <a href="{{ route('login') }}"
-                                       class="inline-flex items-center px-8 py-3.5 bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 text-white font-semibold rounded-xl shadow-md shadow-indigo-100 hover:shadow-lg transition-all duration-150">
-                                        Masuk Sekarang
-                                        <svg class="ml-2 w-4.5 h-4.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                                        </svg>
+                                    <a href="{{ route('login') }}" class="inline-flex items-center px-8 py-4 bg-white text-slate-900 hover:bg-slate-100 font-semibold rounded-full shadow-[0_0_40px_rgba(255,255,255,0.1)] hover:scale-105 transition-all duration-300">
+                                        Masuk Sekarang <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
                                     </a>
                                 @endauth
                             @endif
@@ -537,17 +523,46 @@
         <!-- ===== FOOTER ===== -->
         <footer class="bg-slate-900 border-t border-slate-800 text-slate-400 py-12">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex flex-col md:flex-row items-center justify-between gap-6">
-                    <a href="/" class="flex items-center gap-3">
-                        <div class="p-2 bg-slate-800 rounded-lg">
-                            <img src="{{ asset('fr_logo.png') }}" alt="Logo" class="h-5 w-auto" />
-                        </div>
-                        <span class="text-base font-bold text-white tracking-tight">IT Workload Management</span>
-                    </a>
-                    
-                    <p class="text-xs text-slate-500 font-medium">
-                        &copy; {{ date('Y') }} IT Workload Management &mdash; UPT Teknologi Informasi & Komunikasi. Hak cipta dilindungi.
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16 pt-4">
+                    <!-- Kolom 1: Brand -->
+                    <div class="md:col-span-2">
+                        <a href="/" class="flex items-center gap-3 mb-6 group">
+                            <div class="w-8 h-8 rounded-xl bg-slate-800 flex items-center justify-center text-white font-bold text-sm border border-slate-700 group-hover:bg-slate-700 transition-colors">
+                                R
+                            </div>
+                            <span class="font-display text-xl font-bold text-white tracking-tight">FLOWCAST</span>
+                        </a>
+                        <p class="text-sm text-slate-400 leading-relaxed max-w-md font-light">
+                            Flowcast adalah platform untuk pengelolaan alokasi SDM dan transparansi pengerjaan software secara presisi.
+                        </p>
+                    </div>
+                    <!-- Kolom 2: Navigasi -->
+                    <div>
+                        <h3 class="text-slate-100 font-medium mb-6 text-sm tracking-wide">Navigasi</h3>
+                        <ul class="space-y-4 text-sm text-slate-400">
+                            <li><a href="#" class="hover:text-white transition-colors">Beranda</a></li>
+                            <li><a href="#" class="hover:text-white transition-colors">Panduan Sistem</a></li>
+                            <li><a href="#" class="hover:text-white transition-colors">FAQ</a></li>
+                            <li><a href="#" class="hover:text-white transition-colors">Hubungi Kami</a></li>
+                        </ul>
+                    </div>
+                    <!-- Kolom 3: Tautan Terkait -->
+                    <div>
+                        <h3 class="text-slate-100 font-medium mb-6 text-sm tracking-wide">Tautan Terkait</h3>
+                        <ul class="space-y-4 text-sm text-slate-400">
+                            <li><a href="#" class="hover:text-white transition-colors">Helpdesk IT</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Bottom Bar -->
+                <div class="border-t border-slate-800/60 pt-8 pb-12 flex flex-col md:flex-row items-center justify-between gap-4">
+                    <p class="text-xs text-slate-500">
+                        &copy; {{ date('Y') }} IT Department. Hak cipta dilindungi.
                     </p>
+                    <div class="flex items-center gap-8 text-xs text-slate-500">
+                        <a href="#" class="hover:text-slate-300 transition-colors">Syarat & Ketentuan</a>
+                        <a href="#" class="hover:text-slate-300 transition-colors">Kebijakan Privasi</a>
+                    </div>
                 </div>
             </div>
         </footer>

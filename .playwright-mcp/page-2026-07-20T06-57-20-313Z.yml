@@ -1,0 +1,149 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e4]:
+      - link "Logo IT Workload Management" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - img "Logo" [ref=e7]
+        - generic [ref=e8]: IT Workload Management
+      - navigation [ref=e9]:
+        - link "Fitur Utama" [ref=e10] [cursor=pointer]:
+          - /url: "#features"
+        - link "Preview Sistem" [ref=e11] [cursor=pointer]:
+          - /url: "#workload-preview"
+        - link "Kapasitas & Aturan" [ref=e12] [cursor=pointer]:
+          - /url: "#metrics"
+        - link "Masuk Ke Sistem" [ref=e13] [cursor=pointer]:
+          - /url: http://localhost:8000/login
+  - main [ref=e14]:
+    - generic [ref=e17]:
+      - generic [ref=e18]:
+        - generic [ref=e19]: Internal IT Department Portal
+        - heading "Transparansi Beban Kerja" [level=1] [ref=e22]
+        - paragraph [ref=e23]: Kelola siklus hidup permintaan software (SDRF) universitas, monitor estimasi beban kerja programmer secara proporsional, dan kelola konflik antrian secara real-time.
+        - generic [ref=e24]:
+          - link "Mulai Pengajuan" [ref=e25] [cursor=pointer]:
+            - /url: http://localhost:8000/login
+          - link "Pelajari Fitur" [ref=e28] [cursor=pointer]:
+            - /url: "#features"
+      - generic [ref=e31]:
+        - generic [ref=e32]:
+          - generic [ref=e33]: it-workload-management v1.0
+          - generic [ref=e38]: AKTIF
+        - generic [ref=e40]:
+          - generic [ref=e41]:
+            - generic [ref=e42]:
+              - heading "Ringkasan Beban Kerja IT" [level=3] [ref=e43]
+              - paragraph [ref=e44]: Alokasi Programmer per Bulan Terhitung
+            - generic [ref=e45]: Juli 2026
+          - generic [ref=e47]:
+            - generic [ref=e48]:
+              - paragraph [ref=e49]: Tiket Baru
+              - paragraph [ref=e50]: "04"
+            - generic [ref=e51]:
+              - paragraph [ref=e52]: Development
+              - paragraph [ref=e53]: "07"
+            - generic [ref=e54]:
+              - paragraph [ref=e55]: Selesai UAT
+              - paragraph [ref=e56]: "15"
+          - generic [ref=e57]:
+            - generic [ref=e59]:
+              - generic [ref=e60]: Rizky R. (Senior Developer)
+              - generic [ref=e61]: 18 / 20 Story Points (90%)
+            - generic [ref=e65]:
+              - generic [ref=e66]: Fajar B. (Frontend Dev)
+              - generic [ref=e67]: 12 / 20 Story Points (60%)
+            - generic [ref=e70]:
+              - generic [ref=e71]:
+                - generic [ref=e72]: Mega P. (Backend Dev)
+                - generic [ref=e73]: 22 / 20 Story Points (Overloaded)
+              - generic [ref=e76]: ⚠️ Melebihi kapasitas maksimal! Perlu aktivasi Protokol Resolusi Konflik.
+    - generic [ref=e78]:
+      - generic [ref=e79]:
+        - text: Fitur Utama
+        - heading "Solusi Kolaborasi Siklus Hidup Software" [level=2] [ref=e80]
+        - paragraph [ref=e81]: Dirancang khusus untuk kebutuhan internal IT department kampus guna menghindari kelebihan muatan tugas programmer.
+      - generic [ref=e82]:
+        - generic [ref=e87]:
+          - heading "Manajemen Pengajuan" [level=3] [ref=e88]
+          - paragraph [ref=e89]: User dari unit lain dapat membuat permintaan pengembangan software. Seluruh tahapan dari analisis, UAT, hingga status produksi tercatat rapi.
+        - generic [ref=e94]:
+          - heading "Kapasitas Kerja & Poin" [level=3] [ref=e95]
+          - paragraph [ref=e96]: Menggunakan standarisasi T-Shirt size (S, M, L, XL) yang otomatis dikonversi ke Story Points secara proporsional berdasarkan rentang tanggal kerja.
+        - generic [ref=e101]:
+          - heading "Protokol Konflik Otomatis" [level=3] [ref=e102]
+          - paragraph [ref=e103]: Ketika proyek darurat disetujui dan melampaui batas kapasitas programmer (20 Pts/bulan), sistem otomatis membagi proyek aktif ke status Close-Suspended.
+    - generic [ref=e106]:
+      - generic [ref=e107]:
+        - text: Kalkulasi Story Points
+        - heading "Kapasitas Proporsional Bulanan yang Akurat" [level=2] [ref=e108]
+        - paragraph [ref=e109]: Penghitungan kapasitas tidak lagi dipukul rata secara manual. Sistem SDRF menghitung bobot poin proyek secara harian berdasarkan irisan tanggal aktif dalam bulan bersangkutan.
+        - table [ref=e111]:
+          - rowgroup [ref=e112]:
+            - row [ref=e113]:
+              - columnheader "Ukuran Proyek" [ref=e114]
+              - columnheader "Rentang Hari Kerja" [ref=e115]
+              - columnheader "Story Points" [ref=e116]
+          - rowgroup [ref=e117]:
+            - row [ref=e118]:
+              - cell "S (Small)" [ref=e119]
+              - cell "1 – 3 Hari" [ref=e120]
+              - cell "2 Pts" [ref=e121]
+            - row [ref=e122]:
+              - cell "M (Medium)" [ref=e123]
+              - cell "7 – 14 Hari" [ref=e124]
+              - cell "5 Pts" [ref=e125]
+            - row [ref=e126]:
+              - cell "L (Large)" [ref=e127]
+              - cell "21 – 28 Hari" [ref=e128]
+              - cell "10 Pts" [ref=e129]
+            - row [ref=e130]:
+              - cell "XL (Extra Large)" [ref=e131]
+              - cell "28+ Hari" [ref=e132]
+              - cell "20 Pts" [ref=e133]
+      - generic [ref=e135]:
+        - heading "Audit Trail & Log Riwayat Proyek" [level=4] [ref=e136]
+        - generic [ref=e139]:
+          - generic [ref=e140]:
+            - generic [ref=e141]:
+              - generic [ref=e142]: Status Diubah -> DEVELOPMENT
+              - generic [ref=e143]: Baru Saja
+            - paragraph [ref=e144]: Tiket REQ-2026-002 dialokasikan ke Fajar B. oleh Kepala UPT TIK.
+          - generic [ref=e145]:
+            - generic [ref=e146]:
+              - generic [ref=e147]: ⚠️ Konflik Penjadwalan Terdeteksi
+              - generic [ref=e148]: 10 Menit Lalu
+            - paragraph [ref=e149]: Aktivasi proyek mendesak REQ-2026-004 memicu suspensi proyek REQ-2026-001 (Sisa 5 Pts dikloning ke antrian Waiting).
+          - generic [ref=e150]:
+            - generic [ref=e151]:
+              - generic [ref=e152]: UAT Diterima & Ditandatangani
+              - generic [ref=e153]: 1 Jam Lalu
+            - paragraph [ref=e154]: Pemohon (Unit Keuangan) menyetujui hasil review UAT dengan rating 5 bintang.
+    - generic [ref=e157]:
+      - generic [ref=e158]:
+        - paragraph [ref=e159]: 20 Pts
+        - paragraph [ref=e160]: Batas Beban Kerja
+        - paragraph [ref=e161]: Maksimum per programmer per bulan.
+      - generic [ref=e162]:
+        - paragraph [ref=e163]: 100%
+        - paragraph [ref=e164]: Audit Terlacak
+        - paragraph [ref=e165]: Setiap mutasi status terekam ke log.
+      - generic [ref=e166]:
+        - paragraph [ref=e167]: 3 Peran
+        - paragraph [ref=e168]: Hak Akses Sistem
+        - paragraph [ref=e169]: User, Kepala TIK, Programmer
+      - generic [ref=e170]:
+        - paragraph [ref=e171]: 24/7
+        - paragraph [ref=e172]: Akses Terbuka
+        - paragraph [ref=e173]: Pantau & tinjau progress kapan saja.
+    - generic [ref=e176]:
+      - heading "Masuk ke Portal IT Workload Management & Mulai Bekerja" [level=2] [ref=e177]
+      - paragraph [ref=e178]: Gunakan kredensial akun IT Anda untuk mengelola penugasan, menyetujui tiket, atau mengirim ulasan UAT.
+      - link "Masuk Sekarang" [ref=e180] [cursor=pointer]:
+        - /url: http://localhost:8000/login
+  - contentinfo [ref=e183]:
+    - generic [ref=e185]:
+      - link "Logo IT Workload Management" [ref=e186] [cursor=pointer]:
+        - /url: /
+        - img "Logo" [ref=e188]
+        - generic [ref=e189]: IT Workload Management
+      - paragraph [ref=e190]: © 2026 IT Workload Management — UPT Teknologi Informasi & Komunikasi. Hak cipta dilindungi.

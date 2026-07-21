@@ -16,13 +16,6 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
 
         <style>
-            body {
-                background-color: #030712;
-                background-image: radial-gradient(circle at center, rgba(79, 70, 229, 0.35) 0%, rgba(30, 27, 75, 0.95) 60%, #030712 100%);
-                background-size: cover;
-                background-attachment: fixed;
-            }
-
             @media (prefers-reduced-motion: reduce) {
                 .transition-all {
                     transition: none !important;
@@ -30,17 +23,9 @@
             }
         </style>
     </head>
-    <body class="font-sans antialiased text-slate-200 selection:bg-indigo-500 selection:text-white">
+    <body class="font-sans antialiased text-slate-900 bg-slate-50 selection:bg-indigo-500 selection:text-white">
         <div class="min-h-screen flex flex-col items-center justify-center px-4 py-8">
-            <!-- Card -->
-            <div class="w-full max-w-md bg-slate-900/60 backdrop-blur-xl border border-white/10 shadow-2xl shadow-indigo-950/50 rounded-3xl p-8 lg:p-10">
-                {{ $slot }}
-            </div>
-
-            <!-- Footer -->
-            <p class="mt-8 text-xs text-slate-500 font-medium">
-                &copy; {{ date('Y') }} IT Workload Management &mdash; University IT Department
-            </p>
+            {{ $slot }}
         </div>
     </body>
 </html>
